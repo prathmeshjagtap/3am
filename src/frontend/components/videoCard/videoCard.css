@@ -1,0 +1,42 @@
+.video__card {
+	position: relative;
+	background-color: var(--nav-color);
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	width: 18rem;
+	cursor: pointer;
+	transition: transform 450ms;
+}
+.video__card__badge {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+.video__card-image {
+	background-color: orange;
+	height: 8rem;
+	width: 100%;
+}
+.video__description {
+	margin-left: var(--margin-rem-s);
+}
+.video__details {
+	margin-left: var(--margin-rem-s);
+}
+.video__card__button {
+	display: none;
+	background-color: #3b3b3b;
+	padding: var(--padding-px-l) var(--padding-rem-s);
+	font-size: 1.2rem;
+	gap: var(--gap-sm);
+	color: var(--text-color);
+	margin: calc(2 * var(--margin-px-l)) var(--margin-rem-s);
+}
+
+.video__card:hover {
+	transform: scale(1.04);
+}
+.video__card:hover .video__card__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

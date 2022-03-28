@@ -1,0 +1,39 @@
+.navigation__component {
+	background-color: var(--nav-color);
+	padding: var(--padding-px-l) 3rem;
+}
+.nav {
+	justify-content: space-between;
+}
+
+.nav__search input {
+	background-color: var(--background-color);
+	color: var(--text-color);
+	border-radius: 0 5px 5px 0;
+}
+.nav__search .search__icon {
+	border-radius: 5px 0 0 5px;
+}
+
+.search__mobile input {
+	background-color: var(--background-color);
+}
+
+.btn-main {
+	color: var(--text-color);
+}
+
+.toggles {
+	color: var(--text-color);
+}
+
+::placeholder {
+	font-size: 1rem;
+	color: var(--text-color);
+}
+
+@media screen and (max-width: 780px) {
+	.navigation__component {
+		padding: var(--padding-px-l);
+	}
+}
