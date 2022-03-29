@@ -10,8 +10,9 @@ function Navbar() {
 					<i className="fas fa-bars"></i>
 				</a>
 				<Link className="nav__logo" to="/">
-					<img className="nav__logo-image" alt="website logo" />
+					<p className="nav__logo-image">3am VIBES</p>
 				</Link>
+
 				<div className="nav__search">
 					<i className="fa fa-search search__icon"></i>
 					<input className="input" placeholder="Search" />

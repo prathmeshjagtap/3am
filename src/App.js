@@ -9,6 +9,7 @@ import {
 	History,
 	WatchLater,
 	UserProfile,
+	PageNotFound,
 } from "./frontend/pages";
 import { PageContainer } from "./frontend/components";
 import Mockman from "mockman-js";
@@ -34,6 +35,7 @@ function App() {
 					path="/userProfile"
 					element={<PageContainer page={<UserProfile />} />}
 				/>
+				<Route path="*" element={<PageNotFound />} />
 				{/* Remove Later */}
 				<Route path="/mockman" element={<Mockman />} />
 			</Routes>

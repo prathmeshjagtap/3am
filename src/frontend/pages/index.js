@@ -6,3 +6,4 @@ export { Signup } from "./signup/Signup";
 export { UserProfile } from "./userProfile/UserProfile";
 export { WatchLater } from "./watchLater/WatchLater";
 export { History } from "./history/History";
+export { PageNotFound } from "./pageNotFound/PageNotFound";

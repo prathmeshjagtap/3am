@@ -8,12 +8,16 @@ function VideoCard() {
 			<div className="video__card__badge">
 				<i className="far fa-heart fa-2x"></i>
 			</div>
-			<img alt="" src={cardImage} className="video__card-image" />
+			<img alt="video_name" src={cardImage} className="video__card-image" />
 			<p className="video__description">video card Description</p>
 			<p className="video__details">4K Views | 6 Hours Befor</p>
 			<div className="video__card__button">
 				<i className="fas fa-clock"></i>
 				<p>Watch Later</p>
+			</div>
+			<div className="video__card__button">
+				<i className="fas fa-play-circle"></i>
+				<p>Add to PlayList</p>
 			</div>
 		</div>
 	);

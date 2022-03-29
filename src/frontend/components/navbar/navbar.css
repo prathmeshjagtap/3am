@@ -31,6 +31,10 @@
 	font-size: 1rem;
 	color: var(--text-color);
 }
+.nav__logo-image {
+	color: var(--text-color);
+	text-decoration: none;
+}
 
 @media screen and (max-width: 780px) {
 	.navigation__component {
