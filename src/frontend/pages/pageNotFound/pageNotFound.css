@@ -1,0 +1,8 @@
+.Page_not_found {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--warning-red-color);
+	font-size: 2rem;
+	height: 100vh;
+}

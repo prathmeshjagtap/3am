@@ -1,0 +1,25 @@
+.category__slider_items {
+	display: flex;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	gap: var(--gap-sm);
+	margin-bottom: var(--margin-rem-m);
+}
+.category__slider_items::-webkit-scrollbar {
+	display: none;
+}
+.chip {
+	background-color: var(--background-color-shade2);
+	color: var(--text-color);
+	font-size: 1.2rem;
+	border-radius: 12px;
+	padding: 0px 10px;
+	text-align: center;
+	transition: transform 450ms;
+	cursor: pointer;
+	border: 1px solid var(--border-color);
+}
+.chip:hover {
+	transform: scale(1.04);
+	background-color: #6b6b6b;
+}

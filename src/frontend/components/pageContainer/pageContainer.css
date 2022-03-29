@@ -1,0 +1,24 @@
+.main_container {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	grid-template-areas: "asideleft main ";
+}
+
+.aside__navigation {
+	grid-area: asideleft;
+}
+
+.page_container {
+	grid-area: main;
+	padding: 2rem;
+}
+
+@media screen and (max-width: 780px) {
+	.main_container {
+		grid-template-columns: 1fr;
+		grid-template-areas: " main ";
+	}
+	.aside__navigation {
+		display: none;
+	}
+}
