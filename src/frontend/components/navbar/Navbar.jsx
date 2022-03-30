@@ -1,8 +1,15 @@
 import React from "react";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context";
+import { logoutHandler } from "../../services";
 
 function Navbar() {
+	const { authState, authDispatch } = useAuthContext();
+	const { isAuth } = authState;
+	console.log(isAuth);
+	const navigate = useNavigate();
+
 	return (
 		<nav className="navigation__component">
 			<div className="nav">
@@ -19,9 +26,20 @@ function Navbar() {
 				</div>
 
 				<ul className="nav__right">
-					<Link to="/login">
-						<button className="btn btn-primary btn-main">Login</button>
-					</Link>
+					{isAuth ? (
+						<Link to="/home">
+							<button
+								className="btn btn-primary btn-main"
+								onClick={(e) => logoutHandler(e, authDispatch, navigate)}
+							>
+								Logout
+							</button>
+						</Link>
+					) : (
+						<Link to="/login">
+							<button className="btn btn-primary btn-main">Login</button>
+						</Link>
+					)}
 				</ul>
 			</div>
 			<div className="search__mobile">
