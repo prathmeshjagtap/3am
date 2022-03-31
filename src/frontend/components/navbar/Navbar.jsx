@@ -7,7 +7,7 @@ import { logoutHandler } from "../../services";
 function Navbar() {
 	const { authState, authDispatch } = useAuthContext();
 	const { isAuth } = authState;
-	console.log(isAuth);
+
 	const navigate = useNavigate();
 
 	return (

@@ -1,10 +1,10 @@
 .video__card {
 	position: relative;
 	background-color: var(--nav-color);
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	width: 18rem;
 	cursor: pointer;
-	transition: transform 450ms;
+	transition: transform 0s;
+	border-radius: 4px;
 }
 .video__card__badge {
 	position: absolute;
@@ -12,19 +12,34 @@
 	top: 5px;
 }
 .video__card-image {
-	background-color: orange;
-	height: 8rem;
+	height: 10rem;
 	width: 100%;
 }
-.video__description {
-	margin-left: var(--margin-rem-s);
+.video__details__container {
+	margin: 8px 1rem;
 }
-.video__details {
-	margin-left: var(--margin-rem-s);
+.video__description__container {
+	display: flex;
+	justify-content: space-between;
+}
+.video__description {
+	font-size: 1.1rem;
+}
+.video__views {
+	margin: 8px 0;
+}
+
+.video_actions_container {
+	position: absolute;
+	bottom: -6rem;
+	right: 1rem;
+	background-color: var(--nav-color);
+	color: var(--text-color);
+	z-index: var(--z-index-xl);
 }
 .video__card__button {
 	display: none;
-	background-color: #3b3b3b;
+	background-color: var(--background-color-shade2);
 	padding: var(--padding-px-l) var(--padding-rem-s);
 	font-size: 1.2rem;
 	gap: var(--gap-sm);
@@ -33,10 +48,18 @@
 }
 
 .video__card:hover {
-	transform: scale(1.04);
+	transform: scale(1.02);
+	z-index: var(--z-index-m);
+	transition-delay: 1s;
 }
 .video__card:hover .video__card__button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+	.video__card:hover .display-none {
+		display: none;
+	}
 }
