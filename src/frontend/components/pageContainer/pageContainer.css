@@ -10,7 +10,7 @@
 
 .page_container {
 	grid-area: main;
-	padding: 2rem;
+	padding: 1rem 0;
 }
 
 @media screen and (max-width: 780px) {

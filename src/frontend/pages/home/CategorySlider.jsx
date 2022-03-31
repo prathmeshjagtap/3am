@@ -1,14 +1,19 @@
 import React from "react";
+import { useDataContext } from "../../context";
+import "./home.css";
 
 function CategorySlider() {
-	const categories = ["one", "two", "twent-two", "forty-eight"];
+	const { dataState } = useDataContext();
+	const { categoriesData } = dataState;
+
 	return (
 		<div className="category__slider">
-			<div className="category__slider_items">
-				{categories.map((item) => {
+			<span className="chip">All</span>
+			<div className="category__slider__items">
+				{categoriesData.map((item) => {
 					return (
-						<span key={item} className="chip">
-							{item}
+						<span key={item._id} className="chip">
+							{item.categoryName}
 						</span>
 					);
 				})}

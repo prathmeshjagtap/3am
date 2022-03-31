@@ -14,7 +14,7 @@ function AsideNavigation() {
 				</Link>
 
 				<Link to="/liked" className="navigation__link">
-					<i className="fas fa-heart"></i>liked
+					<i className="fas fa-heart"></i>Liked
 				</Link>
 				<Link to="/playlist" className="navigation__link">
 					<i className="fas fa-play-circle"></i>PlayList

@@ -4,18 +4,77 @@
  * */
 
 export const videos = [
-  {
-    _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
-  },
-  {
-    _id: "F_Riqjdh2oM",
-    title: "Neural Networks from Scratch - P.1 Intro and Neuron Code",
-    creator: "Sentdex",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-  },
+	{
+		_id: "LprRlEvg7JY",
+		title: "Bebe Rexha - I Got You ",
+		creator: "Sush & Yohan Mashup",
+		categoryName: "Mashup",
+		staticImg: "/assets/videoImages/Mashup1.webp",
+		dynamicImg: "/assets/dynamicImages/Mashup-D-1.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "40k",
+	},
+
+	{
+		_id: "l4viU8Ck1_g",
+		title: "Locked Away Mashup",
+		creator: "Sush & Yohan Mashup",
+		categoryName: "Mashup",
+		staticImg: "/assets/videoImages/Mashup2.webp",
+		dynamicImg: "/assets/dynamicImages/Mashup-D-2.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "435k",
+	},
+	{
+		_id: "FGGwgZci04g",
+		title: "Tere Bina X Girls Like You ",
+		creator: "Gravero",
+		categoryName: "Mashup",
+		staticImg: "/assets/videoImages/Mashup3.webp",
+		dynamicImg: "/assets/dynamicImages/Mashup-D-3.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "401k",
+	},
+	{
+		_id: "s-bZD3O3P80",
+		title: "Let Me Down Slowly",
+		creator: "Gravero",
+		categoryName: "Lofi",
+		staticImg: "/assets/videoImages/Lofi1.webp",
+		dynamicImg: "/assets/dynamicImages/Lofi-D-1.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "404k",
+	},
+
+	{
+		_id: "UgZ9zygSAro",
+		title: "Kabhi Jo Badal Barse",
+		creator: "Gravero",
+		categoryName: "Lofi",
+		staticImg: "/assets/videoImages/Lofi2.webp",
+		dynamicImg: "/assets/dynamicImages/Lofi-D-2.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "402k",
+	},
+	{
+		_id: "syFZfO_wfMQ",
+		title: "One Direction - Night Changes",
+		creator: "One Direction",
+		categoryName: "Romantic",
+		staticImg: "/assets/videoImages/Romantic1.webp",
+		dynamicImg: "/assets/dynamicImages/Romantic-D-1.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "30k",
+	},
+
+	{
+		_id: "nLnp0tpZ0ok",
+		title: " Make You Mine",
+		creator: "PUBLIC",
+		categoryName: "Romantic",
+		staticImg: "/assets/videoImages/Romanitc2.webp",
+		dynamicImg: "/assets/dynamicImages/Romantic-D-2.webp",
+		description: "From Nostalgic numbers to Modern day Trends",
+		views: "504k",
+	},
 ];
