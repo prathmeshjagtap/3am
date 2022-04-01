@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./videoCard.css";
-import { postLikeData } from "../../helpers";
 import { useActionContext, useAuthContext } from "../../context";
+import { deleteLikesData } from "../../helpers";
 
-function VideoCard({ video }) {
+function LikeCard({ video }) {
 	const [videoActions, setVideoActions] = useState(false);
 	const { actionDispatch } = useActionContext();
 	const { authState } = useAuthContext();
@@ -37,31 +36,16 @@ function VideoCard({ video }) {
 						</div>
 						<div
 							className="video__card__button"
-							onClick={() => postLikeData(video, actionDispatch, token)}
+							onClick={() => deleteLikesData(video._id, actionDispatch, token)}
 						>
-							<i className="fas fa-heart "></i>
-							<p>Add to Liked</p>
+							<i className="fas fa-trash-alt"></i>
+							<p>Remove Liked</p>
 						</div>
 					</div>
 				) : null}
 			</div>
-			{!videoActions ? (
-				<>
-					<div className="video__card__button  display-none">
-						<i className="fas fa-clock"></i>
-						<p>Watch Later</p>
-					</div>
-					<div
-						className="video__card__button display-none"
-						onClick={() => postLikeData(video, actionDispatch, token)}
-					>
-						<i className="fas fa-heart "></i>
-						<p>Add to Liked</p>
-					</div>
-				</>
-			) : null}
 		</div>
 	);
 }
 
-export { VideoCard };
+export default LikeCard;

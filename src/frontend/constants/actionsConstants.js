@@ -1,0 +1,7 @@
+export const actionConstants = {
+	LOADING: "LOADING",
+	LIKES_DATA: "LIKES_DATA",
+	HISTORY_DATA: "HISTORY_DATA",
+	PLAYLIST_DATA: "PLAYLIST_DATA",
+	ERROR: "ERROR",
+};

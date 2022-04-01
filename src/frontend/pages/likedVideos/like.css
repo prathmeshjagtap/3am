@@ -1,0 +1,18 @@
+.likes__video__container {
+	/* background-color: green; */
+	padding: 2rem;
+}
+
+.empty__page {
+	text-align: center;
+}
+.link {
+	color: var(--primary-color);
+}
+
+.videos__container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 18rem);
+	gap: var(--gap-m);
+	justify-content: center;
+}
