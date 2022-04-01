@@ -1,6 +1,6 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
 import { actions_reducer } from "../reducers";
-import { getLikesData } from "../services";
+import { getLikesData, getWatchLaterData } from "../services";
 import { useAuthContext } from "./auth-context";
 
 const actionContext = createContext(null);
@@ -16,10 +16,12 @@ function ActionProvider({ children }) {
 		dataLikes: [],
 		dataHistory: [],
 		dataPLaylist: [],
+		dataWatchLater: [],
 	});
 
 	useEffect(() => {
 		getLikesData(actionDispatch, token);
+		getWatchLaterData(actionDispatch, token);
 	}, [token]);
 
 	return (

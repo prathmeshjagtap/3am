@@ -25,6 +25,13 @@ const actions_reducer = (state, action) => {
 				error: false,
 				loading: false,
 			};
+		case actionConstants.WATCH_LATER:
+			return {
+				...state,
+				dataWatchLater: action.payload,
+				error: false,
+				loading: false,
+			};
 		case actionConstants.ERROR:
 			return {
 				...state,

@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import "./videoCard.css";
-import { postLikeData } from "../../services";
+import {
+	deleteWatchLaterData,
+	postLikeData,
+	deleteLikesData,
+	postWatchLaterData,
+} from "../../services";
 import { useActionContext, useAuthContext } from "../../context";
 
 function VideoCard({ video }) {
 	const [videoActions, setVideoActions] = useState(false);
-	const { actionDispatch } = useActionContext();
+	const { actionState, actionDispatch } = useActionContext();
+	const { dataLikes, dataWatchLater } = actionState;
 	const { authState } = useAuthContext();
 	const { token } = authState;
 
@@ -31,33 +37,85 @@ function VideoCard({ video }) {
 							<i className="fas fa-play-circle "></i>
 							<p>Add to Playlist</p>
 						</div>
-						<div className="video__card__button ">
-							<i className="fas fa-clock"></i>
-							<p>Watch Later</p>
-						</div>
-						<div
-							className="video__card__button"
-							onClick={() => postLikeData(video, actionDispatch, token)}
-						>
-							<i className="fas fa-heart "></i>
-							<p>Add to Liked</p>
-						</div>
+						{dataWatchLater.find((item) => item._id === video._id) ? (
+							<div
+								className="video__card__button delete__btn"
+								onClick={() =>
+									deleteWatchLaterData(video._id, actionDispatch, token)
+								}
+							>
+								<i className="fas fa-trash-alt"></i>
+								<p>Remove Watch Later</p>
+							</div>
+						) : (
+							<div
+								className="video__card__button "
+								onClick={() => postWatchLaterData(video, actionDispatch, token)}
+							>
+								<i className="fas fa-clock"></i>
+								<p>Watch later</p>
+							</div>
+						)}
+						{dataLikes.find((item) => item._id === video._id) ? (
+							<div
+								className="video__card__button delete__btn"
+								onClick={() =>
+									deleteLikesData(video._id, actionDispatch, token)
+								}
+							>
+								<i className="fas fa-trash-alt"></i>
+								<p>Remove Liked</p>
+							</div>
+						) : (
+							<div
+								className="video__card__button"
+								onClick={() => postLikeData(video, actionDispatch, token)}
+							>
+								<i className="fas fa-heart "></i>
+								<p>Add to Liked</p>
+							</div>
+						)}
 					</div>
 				) : null}
 			</div>
 			{!videoActions ? (
 				<>
-					<div className="video__card__button  display-none">
-						<i className="fas fa-clock"></i>
-						<p>Watch Later</p>
-					</div>
-					<div
-						className="video__card__button display-none"
-						onClick={() => postLikeData(video, actionDispatch, token)}
-					>
-						<i className="fas fa-heart "></i>
-						<p>Add to Liked</p>
-					</div>
+					{dataWatchLater.find((item) => item._id === video._id) ? (
+						<div
+							className="video__card__button display-none delete__btn"
+							onClick={() =>
+								deleteWatchLaterData(video._id, actionDispatch, token)
+							}
+						>
+							<i className="fas fa-trash-alt"></i>
+							<p>Remove Watch Later</p>
+						</div>
+					) : (
+						<div
+							className="video__card__button display-none  "
+							onClick={() => postWatchLaterData(video, actionDispatch, token)}
+						>
+							<i className="fas fa-clock"></i>
+							<p>Watch later</p>
+						</div>
+					)}
+					{dataLikes.find((item) => item._id === video._id) ? (
+						<div
+							className="video__card__button display-none delete__btn"
+							onClick={() => deleteLikesData(video._id, actionDispatch, token)}
+						>
+							<i className="fas fa-trash-alt"></i>
+							<p>Remove Liked</p>
+						</div>
+					) : (
+						<div
+							className="video__card__button display-none"
+							onClick={() => postLikeData(video, actionDispatch, token)}
+						>
+							<i className="fas fa-heart "></i>
+							<p>Add to Liked</p>
+						</div>
+					)}
 				</>
 			) : null}
 		</div>
