@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./videoCard.css";
-import { postLikeData } from "../../helpers";
+import { postLikeData } from "../../services";
 import { useActionContext, useAuthContext } from "../../context";
 
 function VideoCard({ video }) {

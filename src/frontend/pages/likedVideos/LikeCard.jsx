@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useActionContext, useAuthContext } from "../../context";
-import { deleteLikesData } from "../../helpers";
+import { deleteLikesData } from "../../services/";
 
 function LikeCard({ video }) {
 	const [videoActions, setVideoActions] = useState(false);

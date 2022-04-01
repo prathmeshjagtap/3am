@@ -1,6 +1,6 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
 import { actions_reducer } from "../reducers";
-import { getLikesData } from "../helpers";
+import { getLikesData } from "../services";
 import { useAuthContext } from "./auth-context";
 
 const actionContext = createContext(null);
