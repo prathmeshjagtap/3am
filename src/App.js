@@ -10,6 +10,7 @@ import {
 	WatchLater,
 	UserProfile,
 	PageNotFound,
+	VideoListing,
 } from "./frontend/pages";
 import { PageContainer } from "./frontend/components";
 import { PrivateRoute } from "./frontend/protectedRoute/PrivateRoute";
@@ -60,6 +61,14 @@ function App() {
 					element={
 						<PrivateRoute>
 							<PageContainer page={<UserProfile />} />{" "}
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/video/:videoId"
+					element={
+						<PrivateRoute>
+							<PageContainer page={<VideoListing />} />
 						</PrivateRoute>
 					}
 				/>
