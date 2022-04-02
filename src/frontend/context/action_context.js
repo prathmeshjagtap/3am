@@ -1,6 +1,6 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
 import { actions_reducer } from "../reducers";
-import { getLikesData, getWatchLaterData } from "../services";
+import { getHistoryData, getLikesData, getWatchLaterData } from "../services";
 import { useAuthContext } from "./auth-context";
 
 const actionContext = createContext(null);
@@ -22,6 +22,7 @@ function ActionProvider({ children }) {
 	useEffect(() => {
 		getLikesData(actionDispatch, token);
 		getWatchLaterData(actionDispatch, token);
+		getHistoryData(actionDispatch, token);
 	}, [token]);
 
 	return (

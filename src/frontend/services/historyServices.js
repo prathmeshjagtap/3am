@@ -81,7 +81,7 @@ const deleteHistoryData = async (id, dispatch, token) => {
 	}
 };
 
-const deleteHistoryDataAll = async (dispatch, token) => {
+const clearHistory = async (dispatch, token) => {
 	dispatch({
 		type: actionConstants.LOADING,
 	});
@@ -109,9 +109,4 @@ const deleteHistoryDataAll = async (dispatch, token) => {
 	}
 };
 
-export {
-	getHistoryData,
-	postHistoryData,
-	deleteHistoryData,
-	deleteHistoryDataAll,
-};
+export { getHistoryData, postHistoryData, deleteHistoryData, clearHistory };
