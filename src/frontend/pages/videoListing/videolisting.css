@@ -1,0 +1,115 @@
+.video__page__continaer {
+	padding: var(--padding-rem-s) var(--padding-rem-m);
+	display: grid;
+	grid-template-columns: 1fr 20rem;
+	grid-template-areas: "main asideRight";
+}
+.video__container {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--nav-color);
+	width: 100%;
+	grid-area: main;
+	height: fit-content;
+}
+.aside__right__Videos {
+	grid-area: asideRight;
+	padding: var(--padding-rem-s);
+	text-align: center;
+}
+.playing__video {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 56.25%;
+}
+.video__iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+.video__title {
+	font-size: 1.5rem;
+	margin-left: var(--margin-rem-s);
+}
+.video__details {
+	margin: 0 var(--margin-rem-s);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.video__views {
+	font-size: 1.2rem;
+}
+.video__actions {
+	display: flex;
+	gap: var(--gap-m);
+	align-self: center;
+	font-size: 1.1rem;
+}
+.video__actions i {
+	margin: 0 8px;
+	align-self: center;
+	cursor: pointer;
+}
+.video__actions div {
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Slider Properties */
+
+.video__slider {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-sm);
+}
+
+.video__slider__items {
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100%;
+	height: calc(100vh - 12rem);
+	gap: var(--gap-sm);
+}
+.video__slider__items::-webkit-scrollbar {
+	display: none;
+}
+.video__title__slider {
+	color: var(--text-color);
+	text-align: left;
+	font-size: 1.1rem;
+	text-decoration: none;
+}
+.color__primary {
+	color: var(--primary-color);
+}
+.color__red {
+	color: var(--warning-red-color);
+}
+@media screen and (max-width: 1024px) {
+	.video__page__continaer {
+		grid-template-columns: 1fr;
+		grid-template-areas: "main ";
+	}
+	.aside__right__Videos {
+		display: none;
+	}
+}
+@media screen and (max-width: 480px) {
+	.video__details {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.video__actions {
+		gap: var(--gap-sm);
+	}
+}

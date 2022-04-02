@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./videoCard.css";
 import {
 	deleteWatchLaterData,
@@ -17,11 +18,14 @@ function VideoCard({ video }) {
 
 	return (
 		<div className="video__card">
-			<img
-				alt={video.title}
-				src={video.staticImg}
-				className="video__card-image"
-			/>
+			<Link to={`/video/${video._id}`}>
+				<img
+					alt={video.title}
+					src={video.staticImg}
+					className="video__card-image"
+				/>
+			</Link>
+
 			<div className="video__details__container">
 				<div className="video__description__container">
 					<p className="video__description">{video.title}</p>
