@@ -6,6 +6,7 @@ import {
 	postLikeData,
 	deleteLikesData,
 	postWatchLaterData,
+	postHistoryData,
 } from "../../services";
 import { useActionContext, useAuthContext } from "../../context";
 
@@ -17,7 +18,10 @@ function VideoCard({ video }) {
 	const { token } = authState;
 
 	return (
-		<div className="video__card">
+		<div
+			className="video__card"
+			onClick={() => postHistoryData(video, actionDispatch, token)}
+		>
 			<Link to={`/video/${video._id}`}>
 				<img
 					alt={video.title}

@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDataContext } from "../../context";
+import { useActionContext, useDataContext } from "../../context";
+import { postHistoryData } from "../../services";
 
 function VideoScroll({ video }) {
 	const { dataState } = useDataContext();
-	const { videosData } = dataState;
+	const { videosData, token } = dataState;
+	const { actionDispatch } = useActionContext();
+
 	const filteredVideos = videosData.filter((item) => item._id !== video._id);
 
 	return (
@@ -12,7 +15,11 @@ function VideoScroll({ video }) {
 			<div className="video__slider__items">
 				{filteredVideos.map((video) => {
 					return (
-						<Link key={video._id} to={`/video/${video._id}`}>
+						<Link
+							key={video._id}
+							to={`/video/${video._id}`}
+							onClick={() => postHistoryData(video, actionDispatch, token)}
+						>
 							<img
 								alt={video.title}
 								src={video.staticImg}

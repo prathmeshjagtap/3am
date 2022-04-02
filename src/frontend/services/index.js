@@ -5,7 +5,7 @@ export {
 	getHistoryData,
 	postHistoryData,
 	deleteHistoryData,
-	deleteHistoryDataAll,
+	clearHistory,
 } from "./historyServices";
 export {
 	getWatchLaterData,
