@@ -14,7 +14,7 @@
 }
 .aside__right__Videos {
 	grid-area: asideRight;
-	padding: var(var(--padding-rem-s));
+	padding: var(--padding-rem-s);
 	text-align: center;
 }
 .playing__video {
