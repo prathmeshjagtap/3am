@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useAuthContext, useActionContext } from "../../context";
-import { deletePlaylistVideo } from "../../services";
+import { deletePlaylistVideo, postHistoryData } from "../../services";
 
 function PlaylistFolder() {
 	const { playlistId } = useParams();
@@ -21,7 +21,10 @@ function PlaylistFolder() {
 		<div className="playlist__container">
 			{singlePlaylist.videos.map((item) => (
 				<div className="playlist__card" key={item._id}>
-					<Link to={`/video/${item._id}`}>
+					<Link
+						to={`/video/${item._id}`}
+						onClick={() => postHistoryData(item, actionDispatch, token)}
+					>
 						<img
 							src={item.staticImg}
 							className="playlist__card__image"
