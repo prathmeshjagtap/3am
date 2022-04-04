@@ -11,6 +11,7 @@ import {
 	UserProfile,
 	PageNotFound,
 	VideoListing,
+	PlaylistFolder,
 } from "./frontend/pages";
 import { PageContainer } from "./frontend/components";
 import { PrivateRoute } from "./frontend/protectedRoute/PrivateRoute";
@@ -35,7 +36,7 @@ function App() {
 					path="/watchLater"
 					element={
 						<PrivateRoute>
-							<PageContainer page={<WatchLater />} />{" "}
+							<PageContainer page={<WatchLater />} />
 						</PrivateRoute>
 					}
 				/>
@@ -51,7 +52,7 @@ function App() {
 					path="/history"
 					element={
 						<PrivateRoute>
-							<PageContainer page={<History />} />{" "}
+							<PageContainer page={<History />} />
 						</PrivateRoute>
 					}
 				/>
@@ -60,7 +61,7 @@ function App() {
 					path="/userProfile"
 					element={
 						<PrivateRoute>
-							<PageContainer page={<UserProfile />} />{" "}
+							<PageContainer page={<UserProfile />} />
 						</PrivateRoute>
 					}
 				/>
@@ -69,6 +70,14 @@ function App() {
 					element={
 						<PrivateRoute>
 							<PageContainer page={<VideoListing />} />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/playlist/:playlistId"
+					element={
+						<PrivateRoute>
+							<PageContainer page={<PlaylistFolder />} />
 						</PrivateRoute>
 					}
 				/>

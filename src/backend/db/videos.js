@@ -5,27 +5,6 @@
 
 export const videos = [
 	{
-		_id: "LprRlEvg7JY",
-		title: "Bebe Rexha - I Got You ",
-		creator: "Sush & Yohan Mashup",
-		categoryName: "Mashup",
-		staticImg: "/assets/videoImages/Mashup1.webp",
-		dynamicImg: "/assets/dynamicImages/Mashup-D-1.webp",
-		description: "From Nostalgic numbers to Modern day Trends",
-		views: "40k",
-	},
-
-	{
-		_id: "l4viU8Ck1_g",
-		title: "Locked Away Mashup",
-		creator: "Sush & Yohan Mashup",
-		categoryName: "Mashup",
-		staticImg: "/assets/videoImages/Mashup2.webp",
-		dynamicImg: "/assets/dynamicImages/Mashup-D-2.webp",
-		description: "From Nostalgic numbers to Modern day Trends",
-		views: "435k",
-	},
-	{
 		_id: "FGGwgZci04g",
 		title: "Tere Bina X Girls Like You ",
 		creator: "Gravero",

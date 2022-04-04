@@ -12,3 +12,12 @@ export {
 	postWatchLaterData,
 	deleteWatchLaterData,
 } from "./watchLaterServices";
+
+export {
+	getPlaylistData,
+	postPlaylistData,
+	deletePlaylist,
+	getPlaylistByID,
+	postPlaylistDataByID,
+	deletePlaylistVideo,
+} from "./playlistServices";

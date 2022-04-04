@@ -1,6 +1,8 @@
 import { actionConstants } from "../constants";
 
 const actions_reducer = (state, action) => {
+	let dataPlaylist = state.dataPlaylist;
+
 	switch (action.type) {
 		case actionConstants.LOADING:
 			return { ...state, loading: true };
@@ -25,6 +27,17 @@ const actions_reducer = (state, action) => {
 				error: false,
 				loading: false,
 			};
+		case actionConstants.SINGLE_PLAYLIST:
+			dataPlaylist = dataPlaylist.filter(
+				(item) => item._id !== action.payload._id
+			);
+			dataPlaylist = [...dataPlaylist, action.payload];
+			return {
+				...state,
+				dataPlaylist: [...dataPlaylist],
+				error: false,
+				loading: false,
+			};
 		case actionConstants.WATCH_LATER:
 			return {
 				...state,
@@ -37,9 +50,6 @@ const actions_reducer = (state, action) => {
 				...state,
 				error: action.payload,
 				loading: false,
-				dataLikes: [],
-				dataHistory: [],
-				dataPlaylist: [],
 			};
 		default:
 			return state;
