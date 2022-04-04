@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAuthContext, useActionContext } from "../../context";
-import { Link } from "react-router-dom";
 import { deletePlaylistVideo } from "../../services";
 
 function PlaylistFolder() {
