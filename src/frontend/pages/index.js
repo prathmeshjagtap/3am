@@ -8,3 +8,4 @@ export { WatchLater } from "./watchLater/WatchLater";
 export { History } from "./history/History";
 export { VideoListing } from "./videoListing/VideoListing";
 export { PageNotFound } from "./pageNotFound/PageNotFound";
+export { PlaylistFolder } from "./playlist/PlaylistFolder";

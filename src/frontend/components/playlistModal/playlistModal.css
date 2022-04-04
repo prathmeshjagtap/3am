@@ -1,0 +1,49 @@
+.modal__container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: var(--z-index-xxl);
+}
+
+.playlist__modal {
+	background-color: var(--nav-color);
+	width: 30ch;
+	padding: var(--padding-rem-s);
+	transform: translate(-50%, -50%);
+}
+.playlist__title_actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: var(--margin-rem-s);
+}
+
+.playlist__title {
+	font-size: 1.2rem;
+}
+.close__modal {
+	color: var(--primary-color);
+	cursor: pointer;
+}
+.playlist__list {
+	overflow-y: scroll;
+	max-height: 12rem;
+}
+.playlist__list span {
+	margin: 0 8px;
+}
+.playlist__actions {
+	display: flex;
+	flex-direction: column;
+}
+.playlist__input {
+	margin: var(--margin-rem-s) 0;
+	padding: var(--padding-px-l);
+	border-radius: var(--border-radius-s);
+	color: var(--background-color);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+.playlist__button {
+	color: var(--text-color);
+}

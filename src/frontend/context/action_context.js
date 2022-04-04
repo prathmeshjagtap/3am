@@ -1,6 +1,11 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
 import { actions_reducer } from "../reducers";
-import { getHistoryData, getLikesData, getWatchLaterData } from "../services";
+import {
+	getHistoryData,
+	getLikesData,
+	getWatchLaterData,
+	getPlaylistData,
+} from "../services";
 import { useAuthContext } from "./auth-context";
 
 const actionContext = createContext(null);
@@ -15,7 +20,7 @@ function ActionProvider({ children }) {
 		error: false,
 		dataLikes: [],
 		dataHistory: [],
-		dataPLaylist: [],
+		dataPlaylist: [],
 		dataWatchLater: [],
 	});
 
@@ -23,6 +28,7 @@ function ActionProvider({ children }) {
 		getLikesData(actionDispatch, token);
 		getWatchLaterData(actionDispatch, token);
 		getHistoryData(actionDispatch, token);
+		getPlaylistData(actionDispatch, token);
 	}, [token]);
 
 	return (
