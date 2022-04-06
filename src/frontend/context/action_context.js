@@ -22,6 +22,8 @@ function ActionProvider({ children }) {
 		dataHistory: [],
 		dataPlaylist: [],
 		dataWatchLater: [],
+		category: "All",
+		search: null,
 	});
 
 	useEffect(() => {

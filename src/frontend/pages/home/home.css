@@ -37,3 +37,7 @@
 	gap: var(--gap-m);
 	justify-content: center;
 }
+.videos__container__empty {
+	text-align: center;
+	color: var(--warning-red-color);
+}

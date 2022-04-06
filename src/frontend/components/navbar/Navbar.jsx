@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../context";
+import { useActionContext, useAuthContext } from "../../context";
 import { logoutHandler } from "../../services";
+import { actionConstants } from "../../constants";
 
 function Navbar() {
 	const { authState, authDispatch } = useAuthContext();
 	const { isAuth } = authState;
+	const { actionDispatch } = useActionContext();
+	const [searchInput, setSearchInput] = useState("");
 
 	const navigate = useNavigate();
 
@@ -21,8 +24,22 @@ function Navbar() {
 				</Link>
 
 				<div className="nav__search">
-					<i className="fa fa-search search__icon"></i>
-					<input className="input" placeholder="Search" />
+					<i
+						className="fa fa-search search__icon"
+						onClick={() => {
+							actionDispatch({
+								type: actionConstants.SEARCH_QUERY,
+								payload: searchInput,
+							});
+							setSearchInput("");
+						}}
+					></i>
+					<input
+						className="input"
+						placeholder="Search"
+						onChange={(e) => setSearchInput(e.target.value)}
+						value={searchInput}
+					/>
 				</div>
 
 				<ul className="nav__right">
@@ -43,8 +60,22 @@ function Navbar() {
 				</ul>
 			</div>
 			<div className="search__mobile">
-				<input className="input" placeholder="Search" />
-				<i className="fa fa-search search__icon"></i>
+				<input
+					className="input"
+					placeholder="Search"
+					onChange={(e) => setSearchInput(e.target.value)}
+					value={searchInput}
+				/>
+				<i
+					className="fa fa-search search__icon"
+					onClick={() => {
+						actionDispatch({
+							type: actionConstants.SEARCH_QUERY,
+							payload: searchInput,
+						});
+						setSearchInput("");
+					}}
+				></i>
 			</div>
 		</nav>
 	);
