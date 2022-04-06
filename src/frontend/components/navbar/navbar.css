@@ -37,8 +37,43 @@
 	text-decoration: none;
 }
 
+.mobile__navigation {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	position: absolute;
+	top: 4rem;
+	left: 0;
+	background-color: var(--nav-color);
+	height: 88vh;
+	width: 70%;
+	z-index: var(--z-index-xxl);
+	overflow-y: auto;
+}
+.navigation__link__mobile {
+	color: var(--text-color);
+	text-decoration: none;
+	padding: var(--padding-rem-s);
+	font-size: 1.4rem;
+	margin: var(--margin-rem-s);
+	cursor: pointer;
+}
+.navigation__link__mobile i {
+	margin: 0 var(--margin-rem-s);
+}
+
 @media screen and (max-width: 780px) {
 	.navigation__component {
 		padding: var(--padding-px-l);
+	}
+	.toggles {
+		display: block;
+		margin-left: 8px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.mobile__navigation {
+		top: 6rem;
 	}
 }
