@@ -51,6 +51,18 @@ const actions_reducer = (state, action) => {
 				error: action.payload,
 				loading: false,
 			};
+		case actionConstants.SET_CATEGORY: {
+			return {
+				...state,
+				category: action.payload,
+			};
+		}
+		case actionConstants.SEARCH_QUERY: {
+			return {
+				...state,
+				search: action.payload,
+			};
+		}
 		default:
 			return state;
 	}

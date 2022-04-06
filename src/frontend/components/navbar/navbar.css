@@ -17,6 +17,7 @@
 
 .search__mobile input {
 	background-color: var(--background-color);
+	color: var(--text-color);
 }
 
 .btn-main {
