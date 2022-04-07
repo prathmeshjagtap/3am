@@ -67,6 +67,6 @@ const logoutHandler = (e, dispatch, navigate) => {
 	dispatch({
 		type: authConstants.LOGOUT,
 	});
-	navigate("/login");
+	navigate("/");
 };
 export { loginHandler, signupHandler, logoutHandler };
