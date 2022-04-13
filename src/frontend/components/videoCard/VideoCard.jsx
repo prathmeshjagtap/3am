@@ -14,6 +14,7 @@ import { PlaylistModal } from "../index";
 function VideoCard({ video }) {
 	const [videoActions, setVideoActions] = useState(false);
 	const [modal, setModal] = useState(false);
+	const [hover, setHover] = useState(false);
 	const { actionState, actionDispatch } = useActionContext();
 	const { dataLikes, dataWatchLater } = actionState;
 	const { authState } = useAuthContext();
@@ -26,6 +27,8 @@ function VideoCard({ video }) {
 				onClick={() => {
 					postHistoryData(video, actionDispatch, token);
 				}}
+				onMouseEnter={() => setHover(true)}
+				onMouseLeave={() => setHover(false)}
 			>
 				<Link to={`/video/${video._id}`}>
 					<img
@@ -110,8 +113,8 @@ function VideoCard({ video }) {
 						</div>
 					) : null}
 				</div>
-				{!videoActions ? (
-					<>
+				{!videoActions && hover ? (
+					<div className="hover__container">
 						{dataWatchLater.find((item) => item._id === video._id) ? (
 							<div
 								className="video__card__button display-none delete__btn"
@@ -159,7 +162,7 @@ function VideoCard({ video }) {
 								<p>Add to Liked</p>
 							</div>
 						)}
-					</>
+					</div>
 				) : null}
 			</div>
 			{modal ? <PlaylistModal setModal={setModal} video={video} /> : null}
