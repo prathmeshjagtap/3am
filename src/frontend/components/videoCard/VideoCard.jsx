@@ -28,12 +28,17 @@ function VideoCard({ video }) {
 					postHistoryData(video, actionDispatch, token);
 				}}
 				onMouseEnter={() => setHover(true)}
-				onMouseLeave={() => setHover(false)}
+				onMouseLeave={() => {
+					setHover(false);
+					if (setVideoActions) {
+						setVideoActions(false);
+					}
+				}}
 			>
 				<Link to={`/video/${video._id}`}>
 					<img
 						alt={video.title}
-						src={video.staticImg}
+						src={`https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`}
 						className="video__card-image"
 					/>
 				</Link>
@@ -45,8 +50,7 @@ function VideoCard({ video }) {
 							className="fas fa-ellipsis-v"
 							onClick={(e) => {
 								e.stopPropagation();
-
-								setVideoActions(!videoActions);
+								setVideoActions((videoActions) => !videoActions);
 							}}
 						></i>
 					</div>
@@ -57,7 +61,6 @@ function VideoCard({ video }) {
 								className="video__card__button"
 								onClick={(e) => {
 									e.stopPropagation();
-
 									setModal(true);
 								}}
 							>
