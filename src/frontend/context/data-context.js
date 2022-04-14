@@ -11,6 +11,7 @@ function DataProvider({ children }) {
 		videosData: [],
 		categoriesData: [],
 		error: false,
+		loading: false,
 	});
 
 	useEffect(() => {

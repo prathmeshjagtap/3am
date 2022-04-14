@@ -27,10 +27,12 @@ function ActionProvider({ children }) {
 	});
 
 	useEffect(() => {
-		getLikesData(actionDispatch, token);
-		getWatchLaterData(actionDispatch, token);
-		getHistoryData(actionDispatch, token);
-		getPlaylistData(actionDispatch, token);
+		if (token) {
+			getLikesData(actionDispatch, token);
+			getWatchLaterData(actionDispatch, token);
+			getHistoryData(actionDispatch, token);
+			getPlaylistData(actionDispatch, token);
+		}
 	}, [token]);
 
 	return (

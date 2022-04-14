@@ -15,8 +15,8 @@ import {
 } from "./frontend/pages";
 import { PageContainer } from "./frontend/components";
 import { PrivateRoute } from "./frontend/protectedRoute/PrivateRoute";
-import Mockman from "mockman-js";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
 	return (
 		<div className="App">
@@ -82,9 +82,8 @@ function App() {
 					}
 				/>
 				<Route path="*" element={<PageNotFound />} />
-				{/* Remove Later */}
-				<Route path="/mockman" element={<Mockman />} />
 			</Routes>
+			<ToastContainer />
 		</div>
 	);
 }

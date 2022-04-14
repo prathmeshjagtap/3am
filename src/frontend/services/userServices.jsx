@@ -1,5 +1,6 @@
 import axios from "axios";
 import { authConstants } from "../constants";
+import { toast } from "react-toastify";
 
 const loginHandler = async (e, email, password, dispatch, navigate) => {
 	e.preventDefault();
@@ -17,12 +18,27 @@ const loginHandler = async (e, email, password, dispatch, navigate) => {
 		});
 
 		navigate("/");
-	} catch (err) {
-		dispatch({
-			type: authConstants.ERROR,
-			payload: err,
+		toast.success("Logged in Successfully ", {
+			position: "top-right",
+			autoClose: 2000,
 		});
-		console.log(err);
+	} catch (error) {
+		if (error.response.status === 404) {
+			toast.error("Wrong Email", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else if (error.response.status === 401) {
+			toast.error("Invalid Credentials", {
+				position: "top-center",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Server Error", {
+				position: "bottom-center",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -51,13 +67,23 @@ const signupHandler = async (
 			payload1: response.data.encodedToken,
 			payload2: response.data.createdUser,
 		});
-		navigate("/");
-	} catch (err) {
-		dispatch({
-			type: authConstants.ERROR,
-			payload: "Could not Signup ",
+		toast.success("Sign in Successfully ", {
+			position: "top-right",
+			autoClose: 2000,
 		});
-		console.log(err);
+		navigate("/");
+	} catch (error) {
+		if (error.response.status === 422) {
+			toast.error("Email Already Exists", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Server Error", {
+				position: "bottom-center",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -68,5 +94,9 @@ const logoutHandler = (e, dispatch, navigate) => {
 		type: authConstants.LOGOUT,
 	});
 	navigate("/");
+	toast.success("Logout Successfully ", {
+		position: "top-right",
+		autoClose: 2000,
+	});
 };
 export { loginHandler, signupHandler, logoutHandler };
