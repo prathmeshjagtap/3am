@@ -14,6 +14,7 @@ import { PlaylistModal } from "../index";
 function VideoCard({ video }) {
 	const [videoActions, setVideoActions] = useState(false);
 	const [modal, setModal] = useState(false);
+	const [hover, setHover] = useState(false);
 	const { actionState, actionDispatch } = useActionContext();
 	const { dataLikes, dataWatchLater } = actionState;
 	const { authState } = useAuthContext();
@@ -26,11 +27,18 @@ function VideoCard({ video }) {
 				onClick={() => {
 					postHistoryData(video, actionDispatch, token);
 				}}
+				onMouseEnter={() => setHover(true)}
+				onMouseLeave={() => {
+					setHover(false);
+					if (setVideoActions) {
+						setVideoActions(false);
+					}
+				}}
 			>
 				<Link to={`/video/${video._id}`}>
 					<img
 						alt={video.title}
-						src={video.staticImg}
+						src={`https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`}
 						className="video__card-image"
 					/>
 				</Link>
@@ -42,8 +50,7 @@ function VideoCard({ video }) {
 							className="fas fa-ellipsis-v"
 							onClick={(e) => {
 								e.stopPropagation();
-
-								setVideoActions(!videoActions);
+								setVideoActions((videoActions) => !videoActions);
 							}}
 						></i>
 					</div>
@@ -54,7 +61,6 @@ function VideoCard({ video }) {
 								className="video__card__button"
 								onClick={(e) => {
 									e.stopPropagation();
-
 									setModal(true);
 								}}
 							>
@@ -110,8 +116,8 @@ function VideoCard({ video }) {
 						</div>
 					) : null}
 				</div>
-				{!videoActions ? (
-					<>
+				{!videoActions && hover ? (
+					<div className="hover__container">
 						{dataWatchLater.find((item) => item._id === video._id) ? (
 							<div
 								className="video__card__button display-none delete__btn"
@@ -159,7 +165,7 @@ function VideoCard({ video }) {
 								<p>Add to Liked</p>
 							</div>
 						)}
-					</>
+					</div>
 				) : null}
 			</div>
 			{modal ? <PlaylistModal setModal={setModal} video={video} /> : null}

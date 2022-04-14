@@ -21,7 +21,7 @@ function PlaylistCard({ playlist }) {
 					/>
 				) : (
 					<img
-						src={playlist.videos[0].staticImg}
+						src={`https://img.youtube.com/vi/${playlist.videos[0]._id}/maxresdefault.jpg`}
 						className="playlist__card__image"
 						alt={playlist.title}
 					/>

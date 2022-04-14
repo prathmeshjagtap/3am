@@ -26,7 +26,7 @@ function PlaylistFolder() {
 						onClick={() => postHistoryData(item, actionDispatch, token)}
 					>
 						<img
-							src={item.staticImg}
+							src={`https://img.youtube.com/vi/${item._id}/maxresdefault.jpg`}
 							className="playlist__card__image"
 							alt="on"
 						/>
