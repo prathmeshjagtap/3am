@@ -41,11 +41,13 @@ const postHistoryData = async (video, dispatch, token) => {
 				},
 			}
 		);
+		console.log(response);
 		dispatch({
 			type: actionConstants.HISTORY_DATA,
 			payload: response.data.history,
 		});
 	} catch (error) {
+		console.log(error);
 		dispatch({
 			type: actionConstants.ERROR,
 			payload: error,
