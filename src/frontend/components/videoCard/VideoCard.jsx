@@ -19,7 +19,7 @@ function VideoCard({ video }) {
 	const { dataLikes, dataWatchLater } = actionState;
 	const { authState } = useAuthContext();
 	const { token } = authState;
-
+	
 	return (
 		<>
 			<div
@@ -38,7 +38,11 @@ function VideoCard({ video }) {
 				<Link to={`/video/${video._id}`}>
 					<img
 						alt={video.title}
-						src={`https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`}
+						src={
+							hover
+								? video.dynamicImg
+								: `https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`
+						}
 						className="video__card-image"
 					/>
 				</Link>
