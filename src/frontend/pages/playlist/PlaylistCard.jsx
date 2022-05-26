@@ -11,7 +11,7 @@ function PlaylistCard({ playlist }) {
 		authState: { token },
 	} = useAuthContext();
 	return (
-		<div className="playlist__card">
+		<div className="playlist__card" onMouseLeave={() => setDeleteVideo(false)}>
 			<Link to={`/playlist/${playlist._id}`}>
 				{playlist.videos.length === 0 ? (
 					<img
@@ -21,7 +21,7 @@ function PlaylistCard({ playlist }) {
 					/>
 				) : (
 					<img
-						src={playlist.videos[0].staticImg}
+						src={`https://img.youtube.com/vi/${playlist.videos[0]._id}/maxresdefault.jpg`}
 						className="playlist__card__image"
 						alt={playlist.title}
 					/>

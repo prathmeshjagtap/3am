@@ -1,6 +1,7 @@
 import axios from "axios";
 import { urlConstants } from "../constants";
 import { actionConstants } from "../constants";
+import { toast } from "react-toastify";
 
 const getWatchLaterData = async (dispatch, token) => {
 	dispatch({
@@ -18,11 +19,17 @@ const getWatchLaterData = async (dispatch, token) => {
 			payload: response.data.watchlater,
 		});
 	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
-		});
-		console.error(error);
+		if (error.response.status === 500) {
+			toast.error("Please Login", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Server Error Watch Later", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -46,12 +53,22 @@ const postWatchLaterData = async (video, dispatch, token) => {
 			type: actionConstants.WATCH_LATER,
 			payload: response.data.watchlater,
 		});
-	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
+		toast.success("Video Added to WatchLater", {
+			position: "top-right",
+			autoClose: 2000,
 		});
-		console.error(error);
+	} catch (error) {
+		if (error.response.status === 500) {
+			toast.error("Please Login", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Failed to add video", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -73,12 +90,22 @@ const deleteWatchLaterData = async (id, dispatch, token) => {
 			type: actionConstants.WATCH_LATER,
 			payload: response.data.watchlater,
 		});
-	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
+		toast.success("Video Removed From WatchLater", {
+			position: "top-right",
+			autoClose: 2000,
 		});
-		console.error(error);
+	} catch (error) {
+		if (error.response.status === 500) {
+			toast.error("Please Login", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Failed to Remove video", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 

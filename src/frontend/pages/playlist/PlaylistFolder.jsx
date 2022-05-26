@@ -20,13 +20,17 @@ function PlaylistFolder() {
 	return singlePlaylist && singlePlaylist.videos.length > 0 ? (
 		<div className="playlist__container">
 			{singlePlaylist.videos.map((item) => (
-				<div className="playlist__card" key={item._id}>
+				<div
+					className="playlist__card"
+					key={item._id}
+					onMouseLeave={() => setDeleteVideo(false)}
+				>
 					<Link
 						to={`/video/${item._id}`}
 						onClick={() => postHistoryData(item, actionDispatch, token)}
 					>
 						<img
-							src={item.staticImg}
+							src={`https://img.youtube.com/vi/${item._id}/maxresdefault.jpg`}
 							className="playlist__card__image"
 							alt="on"
 						/>

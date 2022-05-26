@@ -41,6 +41,7 @@ const postHistoryData = async (video, dispatch, token) => {
 				},
 			}
 		);
+
 		dispatch({
 			type: actionConstants.HISTORY_DATA,
 			payload: response.data.history,

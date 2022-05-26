@@ -1,6 +1,7 @@
 import axios from "axios";
 import { urlConstants } from "../constants";
 import { actionConstants } from "../constants";
+import { toast } from "react-toastify";
 
 const getPlaylistData = async (dispatch, token) => {
 	dispatch({
@@ -17,10 +18,17 @@ const getPlaylistData = async (dispatch, token) => {
 			payload: response.data.playlists,
 		});
 	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
-		});
+		if (error.response.status === 500) {
+			toast.error("Please Login", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Server Error Get Playlist", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -45,11 +53,22 @@ const postPlaylistData = async (newPlaylist, dispatch, token) => {
 			type: actionConstants.PLAYLIST_DATA,
 			payload: response.data.playlists,
 		});
-	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
+		toast.success("Playlist Created ", {
+			position: "top-right",
+			autoClose: 2000,
 		});
+	} catch (error) {
+		if (error.response.status === 500) {
+			toast.error("Please Login", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Failed to Create Playlist", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -73,11 +92,22 @@ const deletePlaylist = async (playlistID, dispatch, token) => {
 			type: actionConstants.PLAYLIST_DATA,
 			payload: response.data.playlists,
 		});
-	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
+		toast.warn("Playlist Deleted ", {
+			position: "top-right",
+			autoClose: 2000,
 		});
+	} catch (error) {
+		if (error.response.status === 500) {
+			toast.error("Please Login", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		} else {
+			toast.error("Failed to Delete Playlist", {
+				position: "top-right",
+				autoClose: 2000,
+			});
+		}
 	}
 };
 
@@ -115,10 +145,14 @@ const postPlaylistDataByID = async (playlistID, video, dispatch, token) => {
 			type: actionConstants.SINGLE_PLAYLIST,
 			payload: response.data.playlist,
 		});
+		toast.success("Video Added to Playlist ", {
+			position: "top-right",
+			autoClose: 1000,
+		});
 	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
+		toast.error("Failed to Add video to Playlist", {
+			position: "top-right",
+			autoClose: 2000,
 		});
 	}
 };
@@ -143,10 +177,14 @@ const deletePlaylistVideo = async (playlistID, videoID, dispatch, token) => {
 			type: actionConstants.SINGLE_PLAYLIST,
 			payload: response.data.playlist,
 		});
+		toast.success("Deleted video from Playlist ", {
+			position: "top-right",
+			autoClose: 2000,
+		});
 	} catch (error) {
-		dispatch({
-			type: actionConstants.ERROR,
-			payload: error,
+		toast.error("Failed to Delete video from Playlist", {
+			position: "top-right",
+			autoClose: 2000,
 		});
 	}
 };

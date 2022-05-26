@@ -8,7 +8,7 @@ import "./home.css";
 
 function Home() {
 	const { dataState } = useDataContext();
-	const { videosData } = dataState;
+	const { videosData, loading } = dataState;
 	const {
 		actionState: { category, search },
 		actionDispatch,
@@ -21,27 +21,31 @@ function Home() {
 		<div className="home__container">
 			<CategorySlider />
 			<div className="videos__container">
-				{videos && videos.length !== 0 ? (
-					videos.map((video) => <VideoCard key={video._id} video={video} />)
+				{!loading ? (
+					videos && videos.length !== 0 ? (
+						videos.map((video) => <VideoCard key={video._id} video={video} />)
+					) : (
+						<h1 className="videos__container__empty">
+							Video not availabe which you Searched
+							<button
+								className="btn btn-primary  btn-main"
+								onClick={() => {
+									actionDispatch({
+										type: actionConstants.SEARCH_QUERY,
+										payload: null,
+									});
+									actionDispatch({
+										type: actionConstants.SET_CATEGORY,
+										payload: "All",
+									});
+								}}
+							>
+								See Available Videos
+							</button>
+						</h1>
+					)
 				) : (
-					<h1 className="videos__container__empty">
-						Video not availabe which you Searched
-						<button
-							className="btn btn-primary  btn-main"
-							onClick={() => {
-								actionDispatch({
-									type: actionConstants.SEARCH_QUERY,
-									payload: null,
-								});
-								actionDispatch({
-									type: actionConstants.SET_CATEGORY,
-									payload: "All",
-								});
-							}}
-						>
-							See Available Videos
-						</button>
-					</h1>
+					<div className="loader"></div>
 				)}
 			</div>
 		</div>

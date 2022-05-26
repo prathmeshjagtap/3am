@@ -24,7 +24,7 @@ function HistoryCard({ video }) {
 			<Link to={`/video/${video._id}`}>
 				<img
 					alt={video.title}
-					src={video.staticImg}
+					src={`https://img.youtube.com/vi/${video._id}/maxresdefault.jpg`}
 					className="video__card-image"
 				/>
 			</Link>

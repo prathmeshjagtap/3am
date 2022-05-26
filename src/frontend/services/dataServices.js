@@ -2,6 +2,9 @@ import axios from "axios";
 import { dataConstants } from "../constants";
 
 const getVideos = async (dispatch) => {
+	dispatch({
+		type: dataConstants.LOADING,
+	});
 	try {
 		const response = await axios.get("/api/videos");
 		dispatch({
@@ -17,6 +20,9 @@ const getVideos = async (dispatch) => {
 };
 
 const getCategories = async (dispatch) => {
+	dispatch({
+		type: dataConstants.LOADING,
+	});
 	try {
 		const response = await axios.get("/api/categories");
 		dispatch({

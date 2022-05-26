@@ -3,7 +3,7 @@
 	background-color: var(--nav-color);
 	width: 18rem;
 	cursor: pointer;
-	transition: transform 0s;
+	transition: transform 450ms;
 	border-radius: 4px;
 }
 .video__card__badge {
@@ -38,7 +38,9 @@
 	z-index: var(--z-index-xl);
 }
 .video__card__button {
-	display: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--background-color-shade2);
 	padding: var(--padding-px-l) var(--padding-rem-s);
 	font-size: 1.2rem;
@@ -48,15 +50,19 @@
 }
 
 .video__card:hover {
-	transform: scale(1.02);
+	transform: scale(1.05);
 	z-index: var(--z-index-m);
-	transition-delay: 1s;
 }
-.video__card:hover .video__card__button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.hover__container {
+	position: absolute;
+	bottom: -5rem;
+	right: 0rem;
+	width: 100%;
+	background-color: var(--nav-color);
+	color: var(--text-color);
+	z-index: var(--z-index-xl);
 }
+
 .delete__btn {
 	color: var(--warning-red-color);
 }
