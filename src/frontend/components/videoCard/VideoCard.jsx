@@ -80,7 +80,7 @@ function VideoCard({ video }) {
 									}}
 								>
 									<i className="fas fa-trash-alt"></i>
-									<p>Remove Watch Later</p>
+									<p> Remove Watch L</p>
 								</div>
 							) : (
 								<div
@@ -120,56 +120,6 @@ function VideoCard({ video }) {
 						</div>
 					) : null}
 				</div>
-				{!videoActions && hover ? (
-					<div className="hover__container">
-						{dataWatchLater?.find((item) => item._id === video._id) ? (
-							<div
-								className="video__card__button display-none delete__btn"
-								onClick={(e) => {
-									e.stopPropagation();
-									deleteWatchLaterData(video._id, actionDispatch, token);
-								}}
-							>
-								<i className="fas fa-trash-alt"></i>
-								<p>Remove Watch Later</p>
-							</div>
-						) : (
-							<div
-								className="video__card__button display-none  "
-								onClick={(e) => {
-									e.stopPropagation();
-									postWatchLaterData(video, actionDispatch, token);
-								}}
-							>
-								<i className="fas fa-clock"></i>
-								<p>Watch later</p>
-							</div>
-						)}
-						{dataLikes?.find((item) => item._id === video._id) ? (
-							<div
-								className="video__card__button display-none delete__btn"
-								onClick={(e) => {
-									e.stopPropagation();
-									deleteLikesData(video._id, actionDispatch, token);
-								}}
-							>
-								<i className="fas fa-trash-alt"></i>
-								<p>Remove Liked</p>
-							</div>
-						) : (
-							<div
-								className="video__card__button display-none"
-								onClick={(e) => {
-									e.stopPropagation();
-									postLikeData(video, actionDispatch, token);
-								}}
-							>
-								<i className="fas fa-heart "></i>
-								<p>Add to Liked</p>
-							</div>
-						)}
-					</div>
-				) : null}
 			</div>
 			{modal ? <PlaylistModal setModal={setModal} video={video} /> : null}
 		</>
