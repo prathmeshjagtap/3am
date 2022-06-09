@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useActionContext, useAuthContext } from "../../context";
 import { HistoryCard } from "./HistoryCard";
 import { Link } from "react-router-dom";
-import { clearHistory } from "../../services";
+import { clearHistory, getHistoryData } from "../../services";
 import "./history.css";
 
 function History() {
@@ -11,6 +11,12 @@ function History() {
 	} = useAuthContext();
 	const { actionState, actionDispatch } = useActionContext();
 	const { dataHistory } = actionState;
+
+	useEffect(() => {
+		if (token) {
+			getHistoryData(actionDispatch, token);
+		}
+	}, [token, actionDispatch]);
 	return (
 		<div>
 			{dataHistory.length !== 0 ? (

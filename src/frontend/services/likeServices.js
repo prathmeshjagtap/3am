@@ -12,12 +12,12 @@ const getLikesData = async (dispatch, token) => {
 				authorization: token,
 			},
 		});
-
 		dispatch({
 			type: actionConstants.LIKES_DATA,
 			payload: response.data.likes,
 		});
 	} catch (error) {
+		console.log(error);
 		if (error.response.status === 500) {
 			toast.error("Please Login", {
 				position: "top-right",

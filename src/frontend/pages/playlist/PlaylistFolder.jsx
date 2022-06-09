@@ -15,7 +15,7 @@ function PlaylistFolder() {
 		authState: { token },
 	} = useAuthContext();
 
-	const singlePlaylist = dataPlaylist.find((item) => item._id === playlistId);
+	const singlePlaylist = dataPlaylist?.find((item) => item._id === playlistId);
 
 	return singlePlaylist && singlePlaylist.videos.length > 0 ? (
 		<div className="playlist__container">

@@ -1,12 +1,22 @@
-import React from "react";
-import { useActionContext } from "../../context";
+import React, { useEffect } from "react";
+import { useActionContext, useAuthContext } from "../../context";
 import "./like.css";
 import { Link } from "react-router-dom";
 import { VideoCard } from "../../components";
+import { getLikesData } from "../../services";
 
 function Liked() {
-	const { actionState } = useActionContext();
+	const { actionState, actionDispatch } = useActionContext();
 	const { dataLikes } = actionState;
+	const {
+		authState: { token },
+	} = useAuthContext();
+
+	useEffect(() => {
+		if (token) {
+			getLikesData(actionDispatch, token);
+		}
+	}, [token, actionDispatch]);
 
 	return (
 		<div className="likes__video__container">

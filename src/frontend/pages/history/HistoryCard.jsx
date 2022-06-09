@@ -53,7 +53,7 @@ function HistoryCard({ video }) {
 							<i className="fas fa-trash-alt"></i>
 							<p>Delete History</p>
 						</div>
-						{dataWatchLater.find((item) => item._id === video._id) ? (
+						{dataWatchLater?.find((item) => item._id === video._id) ? (
 							<div
 								className="video__card__button delete__btn"
 								onClick={() =>

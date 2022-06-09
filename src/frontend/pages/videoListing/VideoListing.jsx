@@ -52,7 +52,7 @@ function VideoListing() {
 					<div className="video__details">
 						<p className="video__views">{video.views} views</p>
 						<div className="video__actions">
-							{dataLikes.find((item) => item._id === video._id) ? (
+							{dataLikes?.find((item) => item._id === video._id) ? (
 								<i
 									className="fas fa-heart color__red"
 									onClick={() =>
@@ -71,7 +71,7 @@ function VideoListing() {
 								<span>Save</span>
 							</div>
 
-							{dataWatchLater.find((item) => item._id === video._id) ? (
+							{dataWatchLater?.find((item) => item._id === video._id) ? (
 								<div
 									className="color__primary"
 									onClick={() =>

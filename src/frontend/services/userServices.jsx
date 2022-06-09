@@ -9,14 +9,12 @@ const loginHandler = async (e, email, password, dispatch, navigate) => {
 			email,
 			password,
 		});
-
 		localStorage.setItem("token", response.data.encodedToken);
 		dispatch({
 			type: authConstants.AUTHENTICATION,
 			payload1: response.data.encodedToken,
 			payload2: response.data.foundUser,
 		});
-
 		navigate("/");
 		toast.success("Logged in Successfully ", {
 			position: "top-right",
@@ -43,7 +41,6 @@ const loginHandler = async (e, email, password, dispatch, navigate) => {
 };
 
 const signupHandler = async (
-	e,
 	firstName,
 	lastName,
 	email,
@@ -51,7 +48,6 @@ const signupHandler = async (
 	dispatch,
 	navigate
 ) => {
-	e.preventDefault();
 	try {
 		const response = await axios.post(`/api/auth/signup`, {
 			firstName,
@@ -59,9 +55,7 @@ const signupHandler = async (
 			email,
 			password,
 		});
-
 		localStorage.setItem("token", response.data.encodedToken);
-
 		dispatch({
 			type: authConstants.AUTHENTICATION,
 			payload1: response.data.encodedToken,

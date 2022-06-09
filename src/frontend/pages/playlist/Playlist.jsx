@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useActionContext } from "../../context";
+import { useActionContext, useAuthContext } from "../../context";
+import { getPlaylistData } from "../../services";
 import "./playlist.css";
 import { PlaylistCard } from "./PlaylistCard";
 
 function Playlist() {
 	const {
 		actionState: { dataPlaylist },
+		actionDispatch,
 	} = useActionContext();
+	const {
+		authState: { token },
+	} = useAuthContext();
+
+	useEffect(() => {
+		if (token) {
+			getPlaylistData(actionDispatch, token);
+		}
+	}, [token, actionDispatch]);
 
 	return (
 		<div>

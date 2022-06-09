@@ -40,17 +40,17 @@ function Signup() {
 			<div className="signup__div">
 				<form
 					className="form"
-					onSubmit={(e) =>
+					onSubmit={(e) => {
+						e.preventDefault();
 						signupHandler(
-							e,
 							userDetail.firstName,
 							userDetail.lastName,
 							userDetail.email,
 							userDetail.password,
 							authDispatch,
 							navigate
-						)
-					}
+						);
+					}}
 				>
 					<h2 className="form__name">Signup</h2>
 					<div className="input__box">

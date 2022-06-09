@@ -19,7 +19,7 @@ function VideoCard({ video }) {
 	const { dataLikes, dataWatchLater } = actionState;
 	const { authState } = useAuthContext();
 	const { token } = authState;
-	
+
 	return (
 		<>
 			<div
@@ -71,7 +71,7 @@ function VideoCard({ video }) {
 								<i className="fas fa-play-circle "></i>
 								<p>Add to Playlist</p>
 							</div>
-							{dataWatchLater.find((item) => item._id === video._id) ? (
+							{dataWatchLater?.find((item) => item._id === video._id) ? (
 								<div
 									className="video__card__button delete__btn"
 									onClick={(e) => {
@@ -122,7 +122,7 @@ function VideoCard({ video }) {
 				</div>
 				{!videoActions && hover ? (
 					<div className="hover__container">
-						{dataWatchLater.find((item) => item._id === video._id) ? (
+						{dataWatchLater?.find((item) => item._id === video._id) ? (
 							<div
 								className="video__card__button display-none delete__btn"
 								onClick={(e) => {
@@ -138,7 +138,6 @@ function VideoCard({ video }) {
 								className="video__card__button display-none  "
 								onClick={(e) => {
 									e.stopPropagation();
-
 									postWatchLaterData(video, actionDispatch, token);
 								}}
 							>
@@ -146,7 +145,7 @@ function VideoCard({ video }) {
 								<p>Watch later</p>
 							</div>
 						)}
-						{dataLikes.find((item) => item._id === video._id) ? (
+						{dataLikes?.find((item) => item._id === video._id) ? (
 							<div
 								className="video__card__button display-none delete__btn"
 								onClick={(e) => {
