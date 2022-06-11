@@ -20,7 +20,7 @@ function PlaylistModal({ setModal, video }) {
 	const {
 		authState: { token },
 	} = useAuthContext();
-
+	console.log(video);
 	return (
 		<div className="modal__container">
 			<div className="playlist__modal">
