@@ -13,7 +13,6 @@ const getWatchLaterData = async (dispatch, token) => {
 				authorization: token,
 			},
 		});
-		console.log(response.data.watchlater);
 		dispatch({
 			type: actionConstants.WATCH_LATER,
 			payload: response.data.watchlater,
