@@ -13,13 +13,13 @@ const getWatchLaterData = async (dispatch, token) => {
 				authorization: token,
 			},
 		});
-
 		dispatch({
 			type: actionConstants.WATCH_LATER,
 			payload: response.data.watchlater,
 		});
 	} catch (error) {
-		if (error.response.status === 500) {
+		console.log(error);
+		if (error?.response?.status === 500) {
 			toast.error("Please Login", {
 				position: "top-right",
 				autoClose: 2000,

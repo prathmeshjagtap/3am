@@ -71,7 +71,7 @@ function Navbar() {
 				) : null}
 
 				<Link className="nav__logo" to="/">
-					<p className="nav__logo-image">3am VIBES</p>
+					<p className="nav__logo-image">3am Vibes</p>
 				</Link>
 
 				<div className="nav__search">
