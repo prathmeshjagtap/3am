@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./authForms.css";
 import { useAuthContext } from "../../context";
 import { loginHandler } from "../../services";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const { authDispatch } = useAuthContext();
 	const [passwordVisibility, setPasswordVisibility] = useState("password");
@@ -47,7 +48,8 @@ function Login() {
 								userDetail.email,
 								userDetail.password,
 								authDispatch,
-								navigate
+								navigate,
+								location
 							)
 						}
 					>
@@ -108,7 +110,8 @@ function Login() {
 									"test@gmail.com",
 									"test@1234",
 									authDispatch,
-									navigate
+									navigate,
+									location
 								)
 							}
 						>

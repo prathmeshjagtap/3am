@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./videoCard.css";
 import {
 	deleteWatchLaterData,
@@ -19,6 +19,8 @@ function VideoCard({ video }) {
 	const { dataLikes, dataWatchLater } = actionState;
 	const { authState } = useAuthContext();
 	const { token } = authState;
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	return (
 		<>
@@ -65,7 +67,9 @@ function VideoCard({ video }) {
 								className="video__card__button"
 								onClick={(e) => {
 									e.stopPropagation();
-									setModal(true);
+									token
+										? setModal(true)
+										: navigate("/login", { state: { from: location } });
 								}}
 							>
 								<i className="fas fa-play-circle "></i>

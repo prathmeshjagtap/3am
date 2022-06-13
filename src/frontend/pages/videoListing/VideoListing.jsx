@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import "./videolisting.css";
 import VideoScroll from "./VideoScroll";
@@ -21,6 +21,8 @@ function VideoListing() {
 	const {
 		authState: { token },
 	} = useAuthContext();
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	useEffect(() => {
 		(async () => {
@@ -56,17 +58,29 @@ function VideoListing() {
 								<i
 									className="fas fa-heart color__red"
 									onClick={() =>
-										deleteLikesData(video._id, actionDispatch, token)
+										token
+											? deleteLikesData(video._id, actionDispatch, token)
+											: navigate("/login", { state: { from: location } })
 									}
 								></i>
 							) : (
 								<i
 									className="far fa-heart"
-									onClick={() => postLikeData(video, actionDispatch, token)}
+									onClick={() =>
+										token
+											? postLikeData(video, actionDispatch, token)
+											: navigate("/login", { state: { from: location } })
+									}
 								></i>
 							)}
 
-							<div onClick={() => setModal(true)}>
+							<div
+								onClick={() =>
+									token
+										? setModal(true)
+										: navigate("/login", { state: { from: location } })
+								}
+							>
 								<i className="fas fa-folder-plus"></i>
 								<span>Save</span>
 							</div>
@@ -84,7 +98,9 @@ function VideoListing() {
 							) : (
 								<div
 									onClick={() =>
-										postWatchLaterData(video, actionDispatch, token)
+										token
+											? postWatchLaterData(video, actionDispatch, token)
+											: navigate("/login", { state: { from: location } })
 									}
 								>
 									<i className="fas fa-clock "></i>

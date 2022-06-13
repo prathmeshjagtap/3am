@@ -11,7 +11,13 @@ const auth_Reducer = (state, action) => {
 		case authConstants.ERROR:
 			return { ...state, error: action.payload };
 		case authConstants.LOGOUT:
-			return { ...state, isAuth: false, loading: false, userInfo: null };
+			return {
+				...state,
+				isAuth: false,
+				loading: false,
+				userInfo: null,
+				token: null,
+			};
 		default:
 			return state;
 	}

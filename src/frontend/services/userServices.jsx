@@ -2,8 +2,16 @@ import axios from "axios";
 import { authConstants } from "../constants";
 import { toast } from "react-toastify";
 
-const loginHandler = async (e, email, password, dispatch, navigate) => {
+const loginHandler = async (
+	e,
+	email,
+	password,
+	dispatch,
+	navigate,
+	location
+) => {
 	e.preventDefault();
+	let from = location.state?.from?.pathname || "/";
 	try {
 		const response = await axios.post(`/api/auth/login`, {
 			email,
@@ -15,7 +23,7 @@ const loginHandler = async (e, email, password, dispatch, navigate) => {
 			payload1: response.data.encodedToken,
 			payload2: response.data.foundUser,
 		});
-		navigate("/");
+		navigate(from, { replace: true });
 		toast.success("Logged in Successfully ", {
 			position: "top-right",
 			autoClose: 2000,
@@ -46,8 +54,10 @@ const signupHandler = async (
 	email,
 	password,
 	dispatch,
-	navigate
+	navigate,
+	location
 ) => {
+	let from = location.state?.from?.pathname || "/";
 	try {
 		const response = await axios.post(`/api/auth/signup`, {
 			firstName,
@@ -65,7 +75,7 @@ const signupHandler = async (
 			position: "top-right",
 			autoClose: 2000,
 		});
-		navigate("/");
+		navigate(from, { replace: true });
 	} catch (error) {
 		if (error.response.status === 422) {
 			toast.error("Email Already Exists", {
