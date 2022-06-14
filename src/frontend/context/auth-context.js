@@ -14,7 +14,6 @@ function AuthProvider({ children }) {
 		error: false,
 		userInfo: null,
 	});
-
 	return (
 		<authContext.Provider value={{ authState, authDispatch }}>
 			{children}

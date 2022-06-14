@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context";
 import "../login/authForms.css";
 import { signupHandler } from "../../services";
 
 function Signup() {
 	const navigate = useNavigate();
+	const location = useLocation();
 	const { authDispatch } = useAuthContext();
 	const [passwordVisibility, setPasswordVisibility] = useState("password");
 	const [passwordVisibilityIcon, setPasswordVisibilityIcon] =
@@ -48,7 +49,8 @@ function Signup() {
 							userDetail.email,
 							userDetail.password,
 							authDispatch,
-							navigate
+							navigate,
+							location
 						);
 					}}
 				>

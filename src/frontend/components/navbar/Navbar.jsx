@@ -88,8 +88,14 @@ function Navbar() {
 					<input
 						className="input"
 						placeholder="Search"
-						onChange={(e) => setSearchInput(e.target.value)}
 						value={searchInput}
+						onChange={(e) => {
+							actionDispatch({
+								type: actionConstants.SEARCH_QUERY,
+								payload: e.target.value,
+							});
+							setSearchInput(e.target.value);
+						}}
 					/>
 				</div>
 
@@ -114,8 +120,14 @@ function Navbar() {
 				<input
 					className="input"
 					placeholder="Search"
-					onChange={(e) => setSearchInput(e.target.value)}
 					value={searchInput}
+					onChange={(e) => {
+						actionDispatch({
+							type: actionConstants.SEARCH_QUERY,
+							payload: e.target.value,
+						});
+						setSearchInput(e.target.value);
+					}}
 				/>
 				<i
 					className="fa fa-search search__icon"

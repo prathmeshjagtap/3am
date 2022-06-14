@@ -67,11 +67,7 @@ function App() {
 				/>
 				<Route
 					path="/video/:videoId"
-					element={
-						<PrivateRoute>
-							<PageContainer page={<VideoListing />} />
-						</PrivateRoute>
-					}
+					element={<PageContainer page={<VideoListing />} />}
 				/>
 				<Route
 					path="/playlist/:playlistId"
