@@ -20,10 +20,6 @@ export const categories = [
 	},
 	{
 		_id: uuid(),
-		categoryName: "We Go Clubbing",
-	},
-	{
-		_id: uuid(),
 		categoryName: "Englishhh Vinglishhh",
 	},
 ];
