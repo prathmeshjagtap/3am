@@ -28,7 +28,7 @@ export const videos = [
 		_id: "1W5BA0lDVLM",
 		title: "6 Days",
 		creator: "Mahmut Orhan",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655187009/3am%20Vibes/6days_eneo14.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -48,7 +48,7 @@ export const videos = [
 		_id: "cn2LORaQogE",
 		title: "I Like Me Better",
 		creator: "Jay Gulderkar",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121657/3am%20Vibes/ilikeme_kefgqv.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -79,7 +79,7 @@ export const videos = [
 		_id: "mRD0-GxqHVo",
 		title: "Heat Waves ",
 		creator: "Glass Animals",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121658/3am%20Vibes/heatwaves_c4onpv.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -116,17 +116,6 @@ export const videos = [
 		views: "41k",
 	},
 	{
-		_id: "OGqla817jqQ",
-		title: "Main Tera - Kalank",
-		creator: "Papa Pandey",
-		categoryName: "Lofi",
-		dynamicImg:
-			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655185839/3am%20Vibes/me_tera_iqxa0k.webp",
-		description: "From Nostalgic numbers to Modern day Trends",
-		views: "12k",
-	},
-
-	{
 		_id: "aHEbLVElUwY",
 		title: "Hairat",
 		creator: "Lucky Ali ",
@@ -140,7 +129,7 @@ export const videos = [
 		_id: "09R8_2nJtjg",
 		title: "Sugar",
 		creator: "Maroon 5",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121659/3am%20Vibes/sugar_uw0f0b.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -160,7 +149,7 @@ export const videos = [
 		_id: "mNEUkkoUoIA",
 		title: "I Ain’t Worried ",
 		creator: "OneRepublic",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655187010/3am%20Vibes/i_ain_t_woried_yqnwi3.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -201,7 +190,7 @@ export const videos = [
 		_id: "hldMjKHGpag",
 		title: "Levitating ",
 		creator: "Dua Lipa",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121661/3am%20Vibes/leviating_oba4bf.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -262,7 +251,7 @@ export const videos = [
 		_id: "aJOTlE1K90k",
 		title: "Girls Like You",
 		creator: "Maroon 5",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121658/3am%20Vibes/girlslikeyou_gzzeaa.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -335,7 +324,7 @@ export const videos = [
 		_id: "W-TE_Ys4iwM",
 		title: "Story of My Life",
 		creator: "One Direction",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121657/3am%20Vibes/storyof_ti876i.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -365,7 +354,7 @@ export const videos = [
 		_id: "mk48xRzuNvA",
 		title: "The Script - Hall of Fame",
 		creator: "Jay Gulderkar",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121657/3am%20Vibes/halloffame_xlo1xu.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -375,7 +364,7 @@ export const videos = [
 		_id: "QJO3ROT-A4E",
 		title: "What Makes You Beautiful",
 		creator: "One Direction",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655121657/3am%20Vibes/what_w0kfoy.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -435,7 +424,7 @@ export const videos = [
 		_id: "BcqxLCWn-CE",
 		title: "I Like Me Better",
 		creator: "Lauv",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655187009/3am%20Vibes/i_like_me_better_kye5ru.webp",
 		description: "From Nostalgic numbers to Modern day Trends",
@@ -445,7 +434,7 @@ export const videos = [
 		_id: "kJQP7kiw5Fk",
 		title: "Despacito ft. Daddy Yankee",
 		creator: "Luis Fonsi",
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 		dynamicImg:
 			"https://res.cloudinary.com/dtxxmldep/image/upload/v1655189125/3am%20Vibes/despacito_vsf2pq.webp",
 		description: "From Nostalgic numbers to Modern day Trends",

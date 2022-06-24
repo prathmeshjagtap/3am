@@ -1,9 +1,5 @@
 .playlist__container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 18rem);
-	gap: var(--gap-m);
-	justify-content: center;
-	padding: var(--padding-rem-m);
+	padding: var(--padding-rem-s);
 }
 
 .playlist__card {
@@ -45,5 +41,5 @@
 	gap: var(--gap-sm);
 	justify-content: center;
 	align-items: center;
-	padding: calc(2 * var(--padding-px-l));
+	padding: calc(3 * var(--padding-px-l));
 }

@@ -28,12 +28,12 @@ function WatchLater() {
 					))}
 				</div>
 			) : (
-				<h3 className="empty__page">
-					you have no videos in Watch Later
+				<div className="empty__page">
+					<h2>you have no videos in watchlater</h2>
 					<Link className="link" to="/">
 						Explore Videos
 					</Link>
-				</h3>
+				</div>
 			)}
 		</div>
 	);

@@ -35,16 +35,18 @@
 .input__box label {
 	font-size: 1rem;
 }
-.input {
+.input__box input {
 	width: 100%;
-	border: 1px solid var(--text-color);
+	outline: none;
 }
+
 .input__TandC {
 	flex-direction: row;
 	align-items: center;
 	font-size: 1rem;
 	margin-top: calc(4 * var(--margin-px-m));
 	justify-content: space-between;
+	display: none;
 }
 input[type="checkbox"] {
 	cursor: pointer;

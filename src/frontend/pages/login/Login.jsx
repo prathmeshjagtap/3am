@@ -55,38 +55,34 @@ function Login() {
 					>
 						<h2 className="form__name">Login</h2>
 						<div className="input__box">
-							<label htmlFor="Email">
-								Email address
-								<input
-									required
-									id="Email"
-									className="input"
-									placeholder="test@gmail.com"
-									name="email"
-									onChange={handleChange}
-								/>
-							</label>
+							<label htmlFor="Email">Email address</label>
+							<input
+								required
+								id="Email"
+								className="input"
+								placeholder="Enter email"
+								name="email"
+								onChange={handleChange}
+							/>
 						</div>
 						<div className="input__box">
-							<label htmlFor="Password">
-								Password
-								<input
-									type={passwordVisibility}
-									required
-									id="Password"
-									className="input"
-									placeholder="test@1234"
-									name="password"
-									onChange={handleChange}
-									autoComplete="on"
-								/>
-								<span className="password__icon">
-									<i
-										className={passwordVisibilityIcon}
-										onClick={passwordVisibilityHandler}
-									></i>
-								</span>
-							</label>
+							<label htmlFor="Password">Password</label>
+							<input
+								type={passwordVisibility}
+								required
+								id="Password"
+								className="input"
+								placeholder="Enter Password"
+								name="password"
+								onChange={handleChange}
+								autoComplete="on"
+							/>
+							<span className="password__icon">
+								<i
+									className={passwordVisibilityIcon}
+									onClick={passwordVisibilityHandler}
+								></i>
+							</span>
 						</div>
 
 						<div className="input__box input__TandC">

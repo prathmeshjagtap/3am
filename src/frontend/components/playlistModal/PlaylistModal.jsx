@@ -65,15 +65,16 @@ function PlaylistModal({ setModal, video }) {
 						<>
 							<input
 								type="text"
-								placeholder="Enter Playlist Name"
+								placeholder="Enter playlist name"
 								className="playlist__input"
 								onChange={(e) =>
 									setAddPlaylist({ ...addPlaylist, title: e.target.value })
 								}
+								value={addPlaylist?.title}
 							/>
 							<input
 								type="text"
-								placeholder="Enter Playlist Description"
+								placeholder="Enter playlist description"
 								className="playlist__input"
 								onChange={(e) =>
 									setAddPlaylist({
@@ -81,12 +82,17 @@ function PlaylistModal({ setModal, video }) {
 										description: e.target.value,
 									})
 								}
+								value={addPlaylist?.description}
 							/>
 							<button
 								className="btn btn-primary playlist__button"
-								onClick={() =>
-									postPlaylistData(addPlaylist, actionDispatch, token)
-								}
+								onClick={() => {
+									postPlaylistData(addPlaylist, actionDispatch, token);
+									setAddPlaylist({
+										title: "",
+										description: "",
+									});
+								}}
 							>
 								Create Playlist
 							</button>

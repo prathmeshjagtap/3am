@@ -14,7 +14,7 @@ function ActionProvider({ children }) {
 		dataPlaylist: [],
 		dataWatchLater: [],
 		category: "All",
-		search: null,
+		search: "",
 	});
 
 	return (

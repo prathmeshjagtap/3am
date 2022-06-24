@@ -35,11 +35,17 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 18rem);
 	gap: var(--gap-m);
-	justify-content: center;
 }
 .videos__container__empty {
-	text-align: center;
 	color: var(--warning-red-color);
+	text-align: center;
+}
+.home__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 70vh;
 }
 
 .loader {
@@ -57,5 +63,11 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+@media screen and (max-width: 1120px) {
+	.videos__container {
+		justify-content: center;
 	}
 }
