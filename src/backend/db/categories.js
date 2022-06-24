@@ -20,6 +20,6 @@ export const categories = [
 	},
 	{
 		_id: uuid(),
-		categoryName: "Englishhh Vinglishhh",
+		categoryName: "English",
 	},
 ];

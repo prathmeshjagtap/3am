@@ -21,20 +21,20 @@ function Playlist() {
 	}, [token, actionDispatch]);
 
 	return (
-		<div>
+		<div className="playlist__container">
 			{dataPlaylist.length !== 0 ? (
-				<div className="playlist__container">
+				<div className="videos__container">
 					{dataPlaylist.map((playlist) => (
 						<PlaylistCard key={playlist._id} playlist={playlist} />
 					))}
 				</div>
 			) : (
-				<h3 className="empty__page">
-					you have No Playlist Created
+				<div className="empty__page">
+					<h2>you have not created playlist</h2>
 					<Link className="link" to="/">
 						Explore Videos
 					</Link>
-				</h3>
+				</div>
 			)}
 		</div>
 	);

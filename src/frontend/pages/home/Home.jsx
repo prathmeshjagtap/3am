@@ -18,36 +18,41 @@ function Home() {
 	const videos = searchVideo(sortData, search);
 
 	return (
-		<div className="home__container">
+		<div>
 			<CategorySlider />
-			<div className="videos__container">
-				{!loading ? (
-					videos && videos.length !== 0 ? (
-						videos.map((video) => <VideoCard key={video._id} video={video} />)
-					) : (
-						<h1 className="videos__container__empty">
-							Video not availabe which you Searched
-							<button
-								className="btn btn-primary  btn-main"
-								onClick={() => {
-									actionDispatch({
-										type: actionConstants.SEARCH_QUERY,
-										payload: null,
-									});
-									actionDispatch({
-										type: actionConstants.SET_CATEGORY,
-										payload: "All",
-									});
-								}}
-							>
-								See Available Videos
-							</button>
-						</h1>
-					)
+
+			{!loading ? (
+				videos && videos.length !== 0 ? (
+					<div className="videos__container">
+						{videos.map((video) => (
+							<VideoCard key={video._id} video={video} />
+						))}
+					</div>
 				) : (
+					<div className="videos__container__empty  home__container">
+						<h1>video not available which you searched</h1>
+						<button
+							className="btn btn-primary  btn-main"
+							onClick={() => {
+								actionDispatch({
+									type: actionConstants.SEARCH_QUERY,
+									payload: null,
+								});
+								actionDispatch({
+									type: actionConstants.SET_CATEGORY,
+									payload: "All",
+								});
+							}}
+						>
+							See available videos
+						</button>
+					</div>
+				)
+			) : (
+				<div className="home__container">
 					<div className="loader"></div>
-				)}
-			</div>
+				</div>
+			)}
 		</div>
 	);
 }

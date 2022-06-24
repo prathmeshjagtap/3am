@@ -4,17 +4,23 @@
 
 .empty__page {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 22vh);
 }
 .link {
-	color: var(--primary-color);
 	display: block;
-	margin: var(--margin-rem-m);
-	padding: var(--padding-rem-m);
-}
-
-.videos__container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 18rem);
-	gap: var(--gap-m);
-	justify-content: center;
+	background-color: var(--primary-color);
+	color: var(--text-color);
+	margin: 8px;
+	padding: 8px;
+	border-radius: 4px;
+	font-size: 1rem;
+	font-weight: 600;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	margin-top: var(--margin-rem-s);
 }

@@ -56,74 +56,64 @@ function Signup() {
 				>
 					<h2 className="form__name">Signup</h2>
 					<div className="input__box">
-						<label htmlFor="Email">
-							Email address
-							<input
-								type="email"
-								name="email"
-								id="Email"
-								className="input"
-								required
-								onChange={handleChange}
-							/>
-						</label>
+						<label htmlFor="Email">Email address</label>
+						<input
+							type="email"
+							name="email"
+							id="Email"
+							className="input"
+							required
+							onChange={handleChange}
+							placeholder="Enter email"
+						/>
 					</div>
 					<div className="input__box">
-						<label htmlFor="firstName">
-							First Name
-							<input
-								id="Username"
-								name="firstName"
-								className="input"
-								required
-								onChange={handleChange}
-							/>
-						</label>
+						<label htmlFor="firstName">First Name</label>
+						<input
+							id="Username"
+							name="firstName"
+							className="input"
+							required
+							onChange={handleChange}
+							placeholder="Enter firstName"
+						/>
 					</div>
 					<div className="input__box">
-						<label htmlFor="lastName">
-							Last Name
-							<input
-								type={passwordVisibility}
-								id="lastName"
-								className="input"
-								name="lastName"
-								required
-								onChange={handleChange}
-							/>
-						</label>
+						<label htmlFor="lastName">Last Name</label>
+						<input
+							type={passwordVisibility}
+							id="lastName"
+							className="input"
+							name="lastName"
+							required
+							onChange={handleChange}
+							placeholder="Enter lastname"
+						/>
 					</div>
 					<div className="input__box">
-						<label htmlFor="Password">
-							Password
-							<input
-								type={passwordVisibility}
-								id="password"
-								className="input"
-								name="password"
-								required
-								onChange={handleChange}
-								autoComplete="on"
-							/>
-							<span className="password__icon">
-								<i
-									className={passwordVisibilityIcon}
-									onClick={passwordVisibilityHandler}
-								></i>
-							</span>
-						</label>
-					</div>
-					<div className="input__box input__TandC">
-						<div>
-							<input type="checkbox" id="TandC" />
-							<label htmlFor="TandC">I accept all Terms and Conditions</label>
-						</div>
+						<label htmlFor="Password">Password</label>
+						<input
+							type={passwordVisibility}
+							id="password"
+							className="input"
+							name="password"
+							required
+							onChange={handleChange}
+							autoComplete="on"
+							placeholder="Enter Password"
+						/>
+						<span className="password__icon">
+							<i
+								className={passwordVisibilityIcon}
+								onClick={passwordVisibilityHandler}
+							></i>
+						</span>
 					</div>
 					<button type="submit" className="btn btn-primary form-btn">
 						Create New Account
 					</button>
 					<Link to="/login" className="auth__Links">
-						Already have an Account 👉
+						👉 Already have an Account
 					</Link>
 				</form>
 			</div>

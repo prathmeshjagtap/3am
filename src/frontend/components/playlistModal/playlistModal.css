@@ -26,8 +26,8 @@
 	cursor: pointer;
 }
 .playlist__list {
-	overflow-y: scroll;
-	max-height: 12rem;
+	overflow-y: auto;
+	max-height: 8rem;
 }
 .playlist__list span {
 	margin: 0 8px;
@@ -46,4 +46,8 @@
 }
 .playlist__button {
 	color: var(--text-color);
+}
+input.playlist__input::placeholder {
+	color: var(--background-color);
+	opacity: 1;
 }

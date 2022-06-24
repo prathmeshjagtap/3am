@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useActionContext, useAuthContext } from "../../context";
 import { logoutHandler } from "../../services";
 import { actionConstants } from "../../constants";
@@ -8,11 +8,26 @@ import { actionConstants } from "../../constants";
 function Navbar() {
 	const { authState, authDispatch } = useAuthContext();
 	const { isAuth } = authState;
-	const { actionDispatch } = useActionContext();
+	const {
+		actionState: { search },
+		actionDispatch,
+	} = useActionContext();
 	const [searchInput, setSearchInput] = useState("");
 	const [navMobile, setNavMobile] = useState(false);
-
+	const location = useLocation();
 	const navigate = useNavigate();
+
+	const searchFilter = (value) => {
+		if (location.pathname !== "/") {
+			navigate("/");
+		}
+		actionDispatch({
+			type: actionConstants.SEARCH_QUERY,
+			payload: value,
+		});
+		setSearchInput(value);
+	};
+
 	return (
 		<nav className="navigation__component">
 			<div className="nav">
@@ -78,6 +93,7 @@ function Navbar() {
 					<i
 						className="fa fa-search search__icon"
 						onClick={() => {
+							if (location.pathname !== "/") navigate("/");
 							actionDispatch({
 								type: actionConstants.SEARCH_QUERY,
 								payload: searchInput,
@@ -88,14 +104,8 @@ function Navbar() {
 					<input
 						className="input"
 						placeholder="Search"
-						value={searchInput}
-						onChange={(e) => {
-							actionDispatch({
-								type: actionConstants.SEARCH_QUERY,
-								payload: e.target.value,
-							});
-							setSearchInput(e.target.value);
-						}}
+						value={search}
+						onChange={(e) => searchFilter(e.target.value)}
 					/>
 				</div>
 
@@ -121,17 +131,12 @@ function Navbar() {
 					className="input"
 					placeholder="Search"
 					value={searchInput}
-					onChange={(e) => {
-						actionDispatch({
-							type: actionConstants.SEARCH_QUERY,
-							payload: e.target.value,
-						});
-						setSearchInput(e.target.value);
-					}}
+					onChange={(e) => search(e.target.value)}
 				/>
 				<i
 					className="fa fa-search search__icon"
 					onClick={() => {
+						if (location.pathname !== "/") navigate("/");
 						actionDispatch({
 							type: actionConstants.SEARCH_QUERY,
 							payload: searchInput,

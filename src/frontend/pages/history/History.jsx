@@ -34,12 +34,12 @@ function History() {
 					</div>
 				</div>
 			) : (
-				<h3 className="empty__page">
-					you have No watched items
+				<div className="empty__page">
+					<h2>you have no watched videos</h2>
 					<Link className="link" to="/">
 						Explore Videos
 					</Link>
-				</h3>
+				</div>
 			)}
 		</div>
 	);

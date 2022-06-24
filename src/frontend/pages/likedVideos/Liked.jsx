@@ -27,12 +27,12 @@ function Liked() {
 					))}
 				</div>
 			) : (
-				<h3 className="empty__page">
-					you have 0 liked Vides
+				<div className="empty__page">
+					<h2>you have 0 liked videos</h2>
 					<Link className="link" to="/">
 						Explore Videos
 					</Link>
-				</h3>
+				</div>
 			)}
 		</div>
 	);
